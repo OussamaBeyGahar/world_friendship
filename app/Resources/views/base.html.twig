@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/css_slider.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link
+            href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=devanagari,latin-ext"
+            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700&amp;subset=devanagari,latin-ext"
+          rel="stylesheet">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+</head>
+<body>
+{%  block header %}
+
+
+
+    <!-- main banner -->
+    <div class="main-top" id="home">
+        <!-- header -->
+        <header>
+            <div class="container-fluid">
+                <div class="header d-md-flex justify-content-between align-items-center py-3 pl-2">
+                    <!-- logo -->
+                    <div id="logo">
+                        <h1><a href="#">World Friendship</a></h1>
+                    </div>
+                    <!-- //logo -->
+                    <!-- nav -->
+                    <div class="nav_w3ls">
+                        <nav>
+                            <label for="drop" class="toggle">Menu</label>
+                            <input type="checkbox" id="drop" />
+                            <ul class="menu">
+                                <li><a href="#" class="active nav-style">Home</a></li>
+                                <li><a href="about.html" class="nav-style">About Us</a></li>
+                                <li>
+                                    <!-- First Tier Drop Down -->
+                                    <label for="drop-2" class="toggle toogle-2 nav-style">Dropdown <span
+                                                class="fa fa-angle-down" aria-hidden="true"></span>
+                                    </label>
+                                    <a href="#" class="nav-style">Activité <span class="fa fa-angle-down"
+                                                                                 aria-hidden="true"></span></a>
+                                    <input type="checkbox" id="drop-2" />
+                                    <ul>
+                                        <li><a href="{{ path('activity_activity_add') }}" class="drop-text">Ajouter un Actvité</a></li>
+                                        <li><a href="{{ path('activity_activity_add') }}" class="drop-text">Afficher les activtés</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html" class="nav-style">Contact Us</a></li>
+                                <li>
+                                        <div class="nav-button">
+                                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                                                <a href="{{ path('fos_user_security_logout') }}">
+                                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                                </a>
+                                            {% else %}
+                                                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                                            {% endif %}
+                                        </div></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- //nav -->
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <!-- banner -->
+        <div class="banner_w3lspvt">
+            <div class="csslider infinity" id="slider1">
+                <input type="radio" name="slides" checked="checked" id="slides_1" />
+                <input type="radio" name="slides" id="slides_2" />
+                <ul class="banner_slide_bg">
+                    <li class="slider-style">
+                        <div class="container-fluid">
+                            <div class="w3ls_banner_txt">
+                                <p class="text-uppercase">W3layouts Designs</p>
+                                <h3 class="w3ls_pvt-title text-wh let mb-3">I am a Food Blog Website Theme</h3>
+                                <!-- rated icons -->
+                                <div class="rating-w3 mt-5 pt-5">
+                                    <ul class="list-unstyled">
+                                        <li class="text-wh mr-4 let">Most Rated :</li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-star"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-star"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-star"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-star"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-star"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //rated icons -->
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slider-style">
+                        <div class="container-fluid">
+                            <div class="w3ls_banner_txt">
+                                <p class="text-uppercase">W3layouts Designs</p>
+                                <h3 class="w3ls_pvt-title text-wh let mb-3">Most Complete Food Blog Theme</h3>
+                                <!-- rated icons -->
+                                <div class="rating-w3 mt-5 pt-5">
+                                    <ul class="list-unstyled">
+                                        <li class="text-wh mr-4 let">Most Rated :</li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-star"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-star"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-star"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-star"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fa fa-star"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //rated icons -->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="arrows">
+                    <label for="slides_1"></label>
+                    <label for="slides_2"></label>
+                </div>
+            </div>
+        </div>
+        <!-- //banner -->
+    </div>
+    <!-- //main banner -->
+
+{% endblock %}
+{%  block content %}
+{%  endblock %}
+{%  block footer %}
+    <!-- footer -->
+    <footer>
+        <div class="w3ls-footer-grids py-4">
+            <div class="container-fluid py-lg-3">
+                <div class="d-md-flex">
+                    <div class="col-md-4 w3l-footer-logo">
+                        <!-- logo 2 -->
+                        <h2>
+                            <a class="logo-2" href="index.html">World Friendship</a>
+                        </h2>
+                        <!-- //logo 2 -->
+                    </div>
+                    <div class="col-md-8 w3l-footer text-md-right text-center mt-3">
+                        <ul class="list-unstyled footer-nav-wthree">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a href="blog1.html">Blog Style 1</a>
+                            </li>
+                            <li>
+                                <a href="blog2.html">Blog style 2</a>
+                            </li>
+                            <li>
+                                <a class="btn-footer" href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <!-- copyright bottom -->
+    <div class="copy-bottom py-4">
+        <div class="container-fluid">
+            <div class="d-sm-flex px-md-3">
+                <!-- copyright -->
+                <div class="copy_right mr-auto">
+                    <p class="text-bl let">© 2019 Food Blog. All rights reserved | Design by
+                        <a href="http://w3layouts.com/" target="_blank">W3layouts</a>
+                    </p>
+                </div>
+                <!-- //copyright -->
+                <!-- footer social icons -->
+                <div class="social-icons-footer mt-sm-0 mt-3">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-facebook"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-google-plus"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-instagram"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //footer social icons -->
+            </div>
+        </div>
+    </div>
+    <!-- //copyright bottom -->
+    <!-- move top icon -->
+    <a href="#home" class="move-top text-center">
+        <span class="fa fa-upload" aria-hidden="true"></span>
+    </a>
+    <!-- //move top icon -->
+{% endblock %}
+</body>
+</html>

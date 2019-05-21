@@ -1,0 +1,65 @@
+<?php
+
+namespace ActivityBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Rating
+ *
+ * @ORM\Table(name="rating", indexes={@ORM\Index(name="idact", columns={"idact"})})
+ * @ORM\Entity
+ */
+class Rating
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="security", type="integer", nullable=false)
+     */
+    private $security;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="beauty", type="integer", nullable=false)
+     */
+    private $beauty;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="budget", type="integer", nullable=false)
+     */
+    private $budget;
+
+    /**
+     * @var \Activity
+     *
+     * @ORM\ManyToOne(targetEntity="Activity")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idact", referencedColumnName="id")
+     * })
+     */
+    private $idact;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="iduser", referencedColumnName="id")
+     */
+    private $iduser;
+
+
+
+}
+

@@ -1,0 +1,113 @@
+<?php
+
+namespace ActivityBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Activity
+ *
+ * @ORM\Table(name="activity", indexes={@ORM\Index(name="iduser", columns={"iduser"})})
+ * @ORM\Entity
+ */
+class Activity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DateAct", type="date", nullable=false)
+     */
+    private $dateact;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DateCreation", type="date", nullable=false)
+     */
+    private $datecreation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Title", type="string", length=255, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Description", type="text", nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Place", type="string", length=255, nullable=false)
+     */
+    private $place;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Type", type="string", length=255, nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="NbVue", type="integer", nullable=false)
+     */
+    private $nbvue;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Nblike", type="integer", nullable=false)
+     */
+    private $nblike;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=false)
+     */
+    private $image;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="liked", type="boolean", nullable=false)
+     */
+    private $liked;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dislike", type="integer", nullable=false)
+     */
+    private $dislike;
+
+    /**
+     * @var \FosUser
+     *
+     * @ORM\ManyToOne(targetEntity="FosUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="iduser", referencedColumnName="id")
+     * })
+     */
+    private $iduser;
+
+
+}
+

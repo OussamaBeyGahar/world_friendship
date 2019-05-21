@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<div class="container py-xl-5 py-lg-3">
+    <div class="blog-left-content">
+        <div class="creatives-grid">
+            <a href="single.html">
+                <img src="/world_friendship/web/uploads/images/products/{{ activity.image }}" alt=" " class="img-fluid" style="margin: auto;display: table;" />
+            </a>
+            <div class="p-mask img-thumbnail">
+                <h4><a href="single.html">{{ activity.title }}</a></h4>
+                <span class="let mt-3">{{ activity.dateact|date }}</span>
+                <hr>
+                <p>{{ activity.description }}</p>
+
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+                {% if likes == true %}
+                <a href="{{ path('activity_activity_single_likes_display',{'id':activity.id,'idact':activity.id}) }}"><img src="{{ asset('images/like.svg') }}" style="width: 32px;height: 32px;" alt=" " class="img-fluid" /></a>
+                <a href="{{ path('activity_activity_single_deslikes_display',{'id':activity.id,'idact':activity.id}) }}"><img src="{{ asset('images/dislike.svg') }}" style="width: 32px;height: 32px;" alt=" " class="img-fluid" /></a>
+
+                    {% if app.user.id ==  activity.iduser.id %}
+                        <a href="{{ path('activity_activity_remove',{'id':activity.id,'idact':activity.id}) }}"><img src="{{ asset('images/trash.svg') }}" style="width: 32px;height: 32px;float: right;" alt=" " class="img-fluid" /></a>
+                    {% endif %}
+
+                {% else %}
+                <a href="{{ path('activity_activity_single_likes_display',{'id':activity.id,'idact':activity.id}) }}"><img src="{{ asset('images/likeb.svg') }}" style="width: 32px;height: 32px;" alt=" " class="img-fluid" /></a>
+                <a href="{{ path('activity_activity_single_deslikes_display',{'id':activity.id,'idact':activity.id}) }}"><img src="{{ asset('images/dislikeb.svg') }}" style="width: 32px;height: 32px;" alt=" " class="img-fluid" /></a>
+                    {% if app.user.id ==  activity.iduser.id %}
+                    <a href="{{ path('activity_activity_remove',{'id':activity.id,'idact':activity.id}) }}"><img src="{{ asset('images/trash.svg') }}" style="width: 32px;height: 32px;float: right;" alt=" " class="img-fluid" /></a>
+                    {% endif %}
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

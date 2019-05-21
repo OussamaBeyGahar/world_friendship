@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    {% for m in list  %}
+
+    <!-- blog -->
+    <section class="wthree-row py-5">
+        <div class="container py-xl-5 py-lg-3">
+            <div class="blog-left-content">
+                <div class="creatives-grid">
+                    <a href="single.html">
+                        <img src="/world_friendship/web/uploads/images/products/{{ m.image }}" alt=" " class="img-fluid" />
+                    </a>
+                    <div class="p-mask img-thumbnail">
+                        <h4><a href="single.html">{{ m.title }}</a></h4>
+                        <span class="let mt-3">{{ m.dateact|date }}</span>
+                        <hr>
+                        <p></p>
+                        <a class="btn button-style-w3ls mt-4" href="{{ path('activity_activity_single_display',{'id':m.id}) }}">Read More</a>
+                    </div>
+                </div>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination float-left mt-5">
+                        <li class="page-item">
+                            <a class="page-link" href="#">Previous</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="blog1.html">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="blog2.html">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="blog3.html">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="blog4.html">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="blog1.html">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <!-- //blog -->
+        "{{ socialButtons() }}"
+    {% endfor %}
+{% endblock %}
